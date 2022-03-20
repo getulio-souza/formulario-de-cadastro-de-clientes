@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cadastro de clientes</title>
+</head>
+<body>
+    <section class="form-content">
+     <!-- formulário de cadastro -->
+       <h1 class="title">Cadastro de novos clientes</h1>
+         <form method="post" action="./cadastro.php" class="my-form">
+         <!-- Nome -->
+            <article class="form-block">
+              <label for="firstName">Nome*</label>
+              <input type="text" id="firstName" value="" name="nome" required="">
+            </article>
+                
+         <!-- Sobrenome -->
+             <article class="form-block">
+                 <label for="lastName">Sobrenome*</label>
+                <input type="text" id="lastName" value="" name="sobrenome">
+                </article>
+        <!-- Nascimento -->
+            <article class="form-block">
+               <label for="Nascimento">Nascimento*</label>
+               <input type="text" id="Nascimento" value="" name="nascimento">
+            </article>
+        <!-- CPF -->
+        <article class="form-block">
+             <label for="CPFinput">CPF*</label>
+              <input id="CPFinput" maxlength="11" oninput="criarMascara('CPF')" name="cpf">
+        </article>
+        <!-- Telefone -->
+             <article class="form-block">
+               <label for="Telefone">Telefone*</label>
+          <input type="text" id="Telefone" value="" name="telefone">
+        </article>
+        <!-- E-mail -->
+        <article class="form-block">
+            <label for="E-mail">E-mail*</label>
+            <input type="text" id="E-mail" value="" name="email">
+        </article>
+        <!-- Endereço -->
+        <article class="form-block">
+            <label for="Endereço">Endereço*</label>
+            <input type="text" id="Endereço" value="" name="endereco">
+      </article>
+      <!-- Número -->
+      <article class="form-block">
+        <label for="Numero">Número*</label>
+          <input type="text" id="Numero" value="" name="numero">
+      </article>
+    </form>
+      <!--Observação -->
+      <div class="box">
+          <p>Deixe seu comentário</p>
+          <textarea name="comentário" id="comentario" cols="25" rows="3" maxlength="300" class="text-area" name="comentario"></textarea>
+      <!-- botão-->
+      <input type="submit" value="Enviar" class="btn"></input>
+          </div>
+        </section>
+        <!-- javascript -->
+    <script src="./script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,174 @@
+/*
+==========================
+Resetando padrões
+==========================
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: fantasy;
+}
+
+/*
+==========================
+Estilos padrões
+==========================
+*/
+
+h1{
+    font-size: 1.7rem;
+}
+
+
+p{
+    font-size: 1rem;
+    /* text-align: center; */
+    margin:0.5rem 0;
+    color: var(--fundo);
+    font-weight: 900;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+/*
+==========================
+Variáveis
+==========================
+*/
+
+:root{
+    --fundo:rgba(57, 50, 173, 1);
+    --botão: rgb(49, 46, 173);
+    --camposdepreenchimento:#fff;
+    --form: rgb(173, 173, 173);
+
+}
+    
+
+
+/*
+==========================
+Container
+==========================
+*/
+
+body{
+    background-color: var(--fundo);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form-content{
+    width: 500px;
+    height: 630px;
+    background-color: var(--form);
+    border-radius: 2rem;
+    box-shadow: 100px 10x 20px black;
+    border: 2px solid black;
+    overflow: hidden;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+@media screen and (max-width:678px){
+    .form-content{
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        height:620px;
+        /* overflow: hidden; */
+    }
+}
+
+.title{
+    text-align: center;
+    color: var(--fundo);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.my-form{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+@media sreen and (max-width:678px){
+    .my-form{
+        display: flex;
+    }
+}
+
+.my-form label{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--fundo);
+}
+
+.my-form input{
+    height: 30px;
+    background: #FFF;
+    width: 70%;
+    border-radius: 5px;
+    color: #155BDA;
+    font-weight: 700;
+    border: 2px solid rgb(109, 103, 103);
+    margin: 0 2rem;
+}
+
+.form-block{
+    color: var(--camposdepreenchimento);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+  
+}
+
+
+/*
+==========================
+botão
+==========================
+*/
+
+.btn{
+ font-size: 1rem;
+ padding: 1rem;
+ margin: 1rem 0;
+ border-radius: 1rem;
+ transition: .5s;
+}
+
+.btn:hover{
+    background-color: var(--fundo);
+    color: var(--camposdepreenchimento);
+}
+
+/*
+==========================
+box de comentário
+==========================
+*/
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
