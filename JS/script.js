@@ -1,14 +1,3 @@
-
-
-//Limitando o número de caracteres do bloco de observação
-// function textLength(textarea){
-//     const textarea = document.querySelector(".text-area");
-//     if(textarea.length > 300){
-//         return "Você excedeu o máximo de caracteres permitidos"
-//     }
-// }
-
-
 //Mascara para telefone e CPF
 function criarMascara(mascaraInput){
     const sizeInput = document.getElementById(`${mascaraInput}Input`).maxLength;
@@ -34,25 +23,12 @@ blockCharFirstName.addEventListener("keypress", (e)=>{
         e.preventDefault();
     }
 });
-
 //Sobrenome
 blockCharLastName.addEventListener("keypress", (e)=>{
  if(!checkChar(e)){
    e.preventDefault();
  }
 });
-
-function checkCharLastName(e){
-    const char = String.fromCharCode(e.keyCode);
-    
-    const padraoDeCaracteres = '[a-zA-z]';
-
-    if(char.match(padraoDeCaracteres)){
-        console.log(char);
-        return true;
-    }
-}
-
 
 function checkCharFirstName(e){
     const char = String.fromCharCode(e.keyCode);
@@ -63,7 +39,16 @@ function checkCharFirstName(e){
         return true;
     }
 }
+function checkCharLastName(e){
+    const char = String.fromCharCode(e.keyCode);
+    
+    const padraoDeCaracteres = '[a-zA-z]';
 
+    if(char.match(padraoDeCaracteres)){
+        console.log(char);
+        return true;
+    }
+}
 
 // validar CPF
 
