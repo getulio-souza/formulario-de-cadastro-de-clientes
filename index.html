@@ -36,7 +36,7 @@
         <!-- Telefone -->
              <article class="form-block">
                <label for="Telefone">Telefone*</label>
-          <input type="text" id="Telefone" value="" name="telefone">
+          <input type="text" id="Telefone" value="" name="telefone" maxlength="11"  onblur="mascaraTel(this)" placeholder="  ex: (11) 9999-999" onfocus="removerHifen(this)">
         </article>
         <!-- E-mail -->
         <article class="form-block">

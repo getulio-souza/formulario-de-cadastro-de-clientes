@@ -5,7 +5,6 @@ require_once('config.php')
 
 <?php
   // definindo as variáveis
-  if(isset($_POST['create'])){
       $nome = $_POST['nome'];
       $sobrenome = $_POST['sobrenome'];
       $nascimento = $_POST['nascimento'];
@@ -15,16 +14,16 @@ require_once('config.php')
       $endereco = $_POST['endereco'];
       $numero = $_POST['numero'];
 
-      //configuarndo o db object a partir das variáveis definidas 
-      $sql = "INSERT INTO users(nome, sobrenome, nascimento, CPF, telefone, email, endereco, numero) VALUES (?,?,?,?,?,?,?,?)";
-      $stmtinsert = $db->prepare($sql); 
-      $result = $stmtinsert->execute([$nome, $sobrenome, $nascimento, $CPF, $telefone, $email, $endereco, $numero]);
-      
-      if($result){
-          echo 'Dados salvos com sucesso.';
+      $conn = new mysqli('localhost', 'root', '', 'cadastrodeclientes');
+      //testando o banco de dados 
+      if($conn->connect_error){
+          die('A conexão falhou : '.$conn->connect_error);
       }
       else{
-          echo 'Houve um erro ao salvar os dados.';
-      }
-  }
-?>
+          $stmt = $conn->prepare("insert into registration(nome, sobrenome, nascimento, CPF, telefone, email, endereco, numero) values (?,?,?,?,?,?,?,?)");
+          $stmt->bind_param("ssiiissi", $nome, $sobrenome, $nascimento, $nascimneto, $CPF, $telefone, $email, $endereco, $numero);
+          $stmt->execute();
+          echo "registro feito com sucesso";
+          $stmt->close();
+          $conn->close();
+      } 
